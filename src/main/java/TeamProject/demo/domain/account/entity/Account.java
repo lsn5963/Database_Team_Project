@@ -1,12 +1,12 @@
 package TeamProject.demo.domain.account.entity;
 
+import TeamProject.demo.domain.client.entity.Client;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.yaml.snakeyaml.tokens.FlowEntryToken;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -33,5 +33,6 @@ public class Account {
 
     private String email;
 
-    private String regNumber;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Client client;
 }

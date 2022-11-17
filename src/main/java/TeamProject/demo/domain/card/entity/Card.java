@@ -1,12 +1,11 @@
 package TeamProject.demo.domain.card.entity;
 
+import TeamProject.demo.domain.account.entity.Account;
+import TeamProject.demo.domain.client.entity.Client;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -28,8 +27,12 @@ public class Card {
 
     private String type;
 
-    private String regNumber;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Client client;
 
-    private Long depositId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Account account;
+
+
 
 }
