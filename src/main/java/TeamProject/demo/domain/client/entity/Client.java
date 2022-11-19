@@ -1,5 +1,6 @@
 package TeamProject.demo.domain.client.entity;
 
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,15 +18,22 @@ public class Client {
     @GeneratedValue
     private Long id;
 
+    @NotNull
     private String regNumber;
 
+    @NotNull
     private String name;
 
+    @NotNull
     private String address;
 
+    @NotNull
     private LocalDateTime birth;
 
     private String email;
+
+    @NotNull
+    private String phoneNumber;
 
     private String job;
 }
