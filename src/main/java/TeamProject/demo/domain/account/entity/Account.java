@@ -19,6 +19,7 @@ public class Account {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String accountId;
 
     @NotNull

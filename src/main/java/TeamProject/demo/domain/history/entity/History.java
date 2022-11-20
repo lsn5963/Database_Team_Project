@@ -3,6 +3,7 @@ package TeamProject.demo.domain.history.entity;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ public class History {
     private Long id;
 
     @NotNull
+    @Column(unique = true)
     private Long accountId;
 
     @NotNull
