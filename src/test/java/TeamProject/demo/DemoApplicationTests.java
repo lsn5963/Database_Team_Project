@@ -13,15 +13,15 @@ class DemoApplicationTests {
 	ClientRepository clientRepository;
 	@Test
 	void contextLoads() {
-		Client client = new Client();
-		client.setAddress("용인");
-//		client.setBirth("");
-		client.setEmail("lsn@sadlkj");
-		client.setJob("학생");
-		client.setName("이");
-		client.setRegNumber("01213-56547");
+//		Client client = new Client();
+//		client.setAddress("용인");
+////		client.setBirth("");
+//		client.setEmail("lsn@sadlkj");
+//		client.setJob("학생");
+//		client.setName("이");
+//		client.setRegNumber("01213-56547");
 
-		clientRepository.save(client);
+//		clientRepository.save(client);
 	}
 
 }

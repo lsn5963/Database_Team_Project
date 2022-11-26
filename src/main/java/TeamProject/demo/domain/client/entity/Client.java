@@ -12,12 +12,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Getter
-@Setter
 public class Client {
 
     @Id
     @GeneratedValue
     private Long id;
+
 
     @NotNull
     @Column(unique = true)
@@ -38,4 +38,22 @@ public class Client {
     private String phoneNumber;
 
     private String job;
+
+//    public Client(String regNumber, String name, String address, LocalDateTime birth, String email, String phoneNumber, String job){
+//
+//    }
+
+    public Client(String regNumber, String name, String address, LocalDateTime birth, String email, String phoneNumber, String job) {
+        this.regNumber = regNumber;
+        this.name = name;
+        this.address = address;
+        this.birth = birth;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.job = job;
+    }
+
+    public Client(){
+
+    }
 }

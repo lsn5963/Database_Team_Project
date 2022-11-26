@@ -45,4 +45,13 @@ public class Account {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
+
+    public Account(String type, Boolean apply, LocalDateTime openingDate, String name, String phoneNumber, String email) {
+        this.type = type;
+        this.apply = apply;
+        this.openingDate = openingDate;
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
 }

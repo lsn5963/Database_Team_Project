@@ -42,6 +42,10 @@ public class Card {
     @ManyToOne(fetch = FetchType.LAZY)
     private Account account;
 
-
-
+    public Card(LocalDateTime applyDate, Long cardLimit, LocalDateTime payDate, String type) {
+        this.applyDate = applyDate;
+        this.cardLimit = cardLimit;
+        this.payDate = payDate;
+        this.type = type;
+    }
 }
