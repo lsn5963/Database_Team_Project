@@ -17,4 +17,20 @@ public class AccountController {
     public void createAccount(AccountCreate accountCreate){
         accountService.save(accountCreate);
     }
+    @RequestMapping("/retrieveAllAccount")
+    public void retrieveAllAccount(){
+        accountService.findAll();
+    }
+    @RequestMapping("/retrieveAccountByName")
+    public void retrieveAccountByName(String name){
+        accountService.findName(name);
+    }
+    @RequestMapping("/sortAccountByDate")
+    public void sortAccountByDate(String date){
+        accountService.sortDate(date);
+    }
+    @RequestMapping("/sortAccountByNameAndDate")
+    public void sortAccountByNameAndDate(String name, String date){
+        accountService.sortNameDate(name, date);
+    }
 }

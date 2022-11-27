@@ -1,6 +1,6 @@
 package TeamProject.demo.domain.client.service;
 
-import TeamProject.demo.domain.client.clientDto.ClientCreate;
+import TeamProject.demo.domain.client.dto.ClientCreate;
 import TeamProject.demo.domain.client.entity.Client;
 import TeamProject.demo.domain.client.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +20,9 @@ public class ClientService {
 
     public List<Client> findAll() {
         return clientRepository.findAll();
+    }
+
+    public void birthFind(String birth) {
+
     }
 }

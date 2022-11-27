@@ -1,4 +1,4 @@
-package TeamProject.demo.domain.card.cardDto;
+package TeamProject.demo.domain.card.dto;
 
 import lombok.Getter;
 

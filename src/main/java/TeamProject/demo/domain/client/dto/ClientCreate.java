@@ -1,6 +1,5 @@
-package TeamProject.demo.domain.client.clientDto;
+package TeamProject.demo.domain.client.dto;
 
-import com.sun.istack.NotNull;
 import lombok.Getter;
 
 import java.time.LocalDateTime;

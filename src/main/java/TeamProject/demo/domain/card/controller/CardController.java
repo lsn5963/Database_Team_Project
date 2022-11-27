@@ -1,9 +1,10 @@
 package TeamProject.demo.domain.card.controller;
 
-import TeamProject.demo.domain.card.cardDto.CardCreate;
+import TeamProject.demo.domain.card.dto.CardCreate;
 import TeamProject.demo.domain.card.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -17,8 +18,13 @@ public class CardController {
         return "ok";
     }
 
-    @RequestMapping("/cardCreate")
+    @RequestMapping("/cardCreate/findAll")
     public String cardFindAll(){
+        cardService.findAll();
+        return "ok";
+    }
+    @RequestMapping("/retrieveCardByName")
+    public String retrieveCardByName(@RequestBody String name){
         cardService.findAll();
         return "ok";
     }

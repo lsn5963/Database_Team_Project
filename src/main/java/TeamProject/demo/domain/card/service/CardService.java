@@ -1,6 +1,6 @@
 package TeamProject.demo.domain.card.service;
 
-import TeamProject.demo.domain.card.cardDto.CardCreate;
+import TeamProject.demo.domain.card.dto.CardCreate;
 import TeamProject.demo.domain.card.entity.Card;
 import TeamProject.demo.domain.card.repository.CardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
