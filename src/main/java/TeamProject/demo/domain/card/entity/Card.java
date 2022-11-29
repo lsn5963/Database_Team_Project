@@ -2,6 +2,7 @@ package TeamProject.demo.domain.card.entity;
 
 import TeamProject.demo.domain.account.entity.Account;
 import TeamProject.demo.domain.client.entity.Client;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,12 +24,14 @@ public class Card {
     private Long cardId;
 
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
     private LocalDateTime applyDate;
 
     @NotNull
     private Long cardLimit;
 
     @NotNull
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
     private LocalDateTime payDate;
 
     @NotNull
@@ -47,5 +50,8 @@ public class Card {
         this.cardLimit = cardLimit;
         this.payDate = payDate;
         this.type = type;
+    }
+    public Card(){
+
     }
 }
