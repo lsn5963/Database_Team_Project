@@ -15,14 +15,14 @@ public class ClientController {
     @Autowired
     private ClientService clientService;
 
-    @RequestMapping("/clientRetrieve")
-    public ResponseEntity clientRetrieve(@RequestBody ClientCreate clientCreate){
+    @RequestMapping("/clientCreate")
+    public ResponseEntity clientCreate(@RequestBody ClientCreate clientCreate){
         clientService.save(clientCreate);
 //        System.out.println("clientRepository = " + clientRepository.findAll());
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
-    @RequestMapping("/clientRetrieve/findAll")
-    public ResponseEntity clientFindAll(){
+    @RequestMapping("/retrieveAllClient")
+    public ResponseEntity retrieveAllClient(){
         System.out.println(clientService.findAll());
 //        System.out.println("clientRepository = " + clientRepository.findAll());
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");

@@ -1,14 +1,13 @@
 package TeamProject.demo.domain.client.entity;
 
+import TeamProject.demo.domain.card.entity.Card;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -38,6 +37,9 @@ public class Client {
     private String phoneNumber;
 
     private String job;
+
+    @OneToMany(mappedBy = "client")
+    private List<Card> cardList;
 
 //    public Client(String regNumber, String name, String address, LocalDateTime birth, String email, String phoneNumber, String job){
 //

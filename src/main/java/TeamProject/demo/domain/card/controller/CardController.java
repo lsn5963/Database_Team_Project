@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,15 +21,16 @@ public class CardController {
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
 
-    @RequestMapping("/cardCreate/findAll")
-    public ResponseEntity cardFindAll(){
+    @RequestMapping("/retrieveAllCard")
+    public ResponseEntity retrieveAllCard(){
         cardService.findAll();
         System.out.println("cardService.findAll() = " + cardService.findAll());
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
-    @RequestMapping("/retrieveCardByName")
-    public ResponseEntity retrieveCardByName(@RequestBody String name){
-        cardService.findAll();
+    @RequestMapping("/retrieveCardByName/{name}")
+    public ResponseEntity retrieveCardByName(@PathVariable String name){
+        System.out.println(name);
+        cardService.findName(name);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
 

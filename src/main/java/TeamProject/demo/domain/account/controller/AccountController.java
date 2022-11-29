@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AccountController {
     @Autowired
     AccountService accountService;
-
+    @RequestMapping("/retrieveAccountByID")
+    public ResponseEntity retrieveAccountByID(@RequestBody Long id){
+        accountService.findAccountId(id);
+        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+    }
     @RequestMapping("/createAccount")
     public ResponseEntity createAccount(@RequestBody AccountCreate accountCreate){
         accountService.save(accountCreate);
@@ -26,19 +31,19 @@ public class AccountController {
         accountService.findAll();
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
-    @RequestMapping("/retrieveAccountByName")
-    public ResponseEntity retrieveAccountByName(String name){
+    @RequestMapping("/retrieveAccountByName/{name}")
+    public ResponseEntity retrieveAccountByName(@PathVariable String name){
         accountService.findName(name);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
     @RequestMapping("/sortAccountByDate")
-    public ResponseEntity sortAccountByDate(String date){
-        accountService.sortDate(date);
+    public ResponseEntity sortAccountByDate(){
+        accountService.sortDate();
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
-    @RequestMapping("/sortAccountByNameAndDate")
-    public ResponseEntity sortAccountByNameAndDate(String name, String date){
-        accountService.sortNameDate(name, date);
+    @RequestMapping("/sortAccountByNameAndDate/{name}")
+    public ResponseEntity sortAccountByNameAndDate(@PathVariable String name){
+        accountService.sortNameDate(name);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
 }

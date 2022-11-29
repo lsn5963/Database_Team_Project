@@ -1,12 +1,10 @@
 package TeamProject.demo.domain.history.entity;
 
+import TeamProject.demo.domain.account.entity.Account;
 import com.sun.istack.NotNull;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -17,9 +15,11 @@ public class History {
     @GeneratedValue
     private Long id;
 
-    @NotNull
-    @Column(unique = true)
-    private Long accountId;
+//    @NotNull
+//    @Column(unique = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "account_Id")
+    private Account account;
 
     @NotNull
     private LocalDateTime dawDate;  //입출금날짜

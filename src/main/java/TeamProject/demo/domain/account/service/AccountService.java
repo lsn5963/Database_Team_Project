@@ -13,7 +13,6 @@ public class AccountService {
     @Autowired
     AccountRepository accountRepository;
     public void save(AccountCreate accountCreate) {
-        System.out.println(accountCreate.getName());
         Account account = new Account(accountCreate.getType(),accountCreate.getApply(),accountCreate.getOpeningDate(),
                 accountCreate.getName(),accountCreate.getPhoneNumber(),accountCreate.getEmail());
 
@@ -25,12 +24,27 @@ public class AccountService {
     }
 
     public void findName(String name) {
-//        return accountRepository.
+        List<Account> account = accountRepository.findByName(name);
+        for (Account account1 : account) {
+            System.out.println(account1.getEmail());
+        }
     }
 
-    public void sortDate(String date) {
+    public void sortDate() {
+        List<Account> sortAccount = accountRepository.findAllByOrderByOpeningDate();
+        for (Account account : sortAccount) {
+            System.out.println("account.getName() = " + account.getName());
+        }
     }
 
-    public void sortNameDate(String name, String date) {
+    public void sortNameDate(String name) {
+        List<Account> account = accountRepository.findAllByNameOrderByOpeningDate(name);
+        for (Account account1 : account) {
+            System.out.println(account1.getOpeningDate());
+        }
+    }
+
+    public void findAccountId(Long accountId) {
+        accountRepository.findById(accountId);
     }
 }

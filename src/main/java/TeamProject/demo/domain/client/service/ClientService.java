@@ -23,6 +23,6 @@ public class ClientService {
     }
 
     public void birthFind(String birth) {
-
+//        clientRepository.findAllByIdOrderByBirth();
     }
 }

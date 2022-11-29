@@ -16,11 +16,12 @@ public class Account {
 
     @Id
     @GeneratedValue
+    @Column(name = "account_Id")
     private Long id;
 
-    @NotNull
-    @Column(unique = true)
-    private String accountId;
+//    @NotNull
+//    @Column(unique = true)
+//    private String accountId;
 
     @NotNull
     private String type;
@@ -53,5 +54,8 @@ public class Account {
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+    }
+    public  Account(){
+
     }
 }
