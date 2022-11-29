@@ -17,11 +17,12 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "card_Id")
     private Long id;
 
-    @NotNull
-    @Column(unique = true)
-    private Long cardId;
+//    @NotNull
+//    @Column(unique = true)
+//    private Long cardId;
 
     @NotNull
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")

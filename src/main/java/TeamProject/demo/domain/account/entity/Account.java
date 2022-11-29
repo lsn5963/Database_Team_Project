@@ -43,7 +43,6 @@ public class Account {
 
     private String email;
 
-    @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
 
