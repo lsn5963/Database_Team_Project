@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -30,7 +31,7 @@ public class Client {
     private String address;
 
     @NotNull
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     private String email;
 
@@ -46,7 +47,7 @@ public class Client {
 //
 //    }
 
-    public Client(String regNumber, String name, String address, LocalDateTime birth, String email, String phoneNumber, String job) {
+    public Client(String regNumber, String name, String address, LocalDate birth, String email, String phoneNumber, String job) {
         this.regNumber = regNumber;
         this.name = name;
         this.address = address;

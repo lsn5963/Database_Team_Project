@@ -23,7 +23,7 @@ public class HistoryController {
 
     @RequestMapping("/retrieveDetailByName")
     public ResponseEntity retrieveDetailByName
-            (@RequestBody String name, Long accountId ){
+            (@PathVariable String name, Long accountId ){
         historyService.findNameId(name, accountId);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }

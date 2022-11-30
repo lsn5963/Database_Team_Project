@@ -2,6 +2,7 @@ package TeamProject.demo.domain.client.dto;
 
 import lombok.Getter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Getter
@@ -12,7 +13,7 @@ public class ClientCreate {
 
     private String address;
 
-    private LocalDateTime birth;
+    private LocalDate birth;
 
     private String email;
 

@@ -12,4 +12,5 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
     List<Account> findByName(String name);
     List<Account> findAllByOrderByOpeningDate();
     List<Account> findAllByNameOrderByOpeningDate(String name);
+
 }

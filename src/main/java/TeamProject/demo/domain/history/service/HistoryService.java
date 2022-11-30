@@ -9,6 +9,7 @@ import TeamProject.demo.domain.history.repository.HistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,13 +17,24 @@ import java.util.Optional;
 public class HistoryService {
     @Autowired
     HistoryRepository historyRepository;
+
+    @Autowired
+    AccountRepository accountRepository;
     public void findId(Long accountId) {
         List<History> history = historyRepository.findByAccountId(accountId);
-        for (History history1 : history) {
-            System.out.println(history1.getDawDate());
+
+        LocalDateTime end = LocalDateTime.now();
+        LocalDateTime start = end.minusMonths(1);
+        List<History> betweenHistory = historyRepository.findByAccountIdAndDawDateBetween(accountId, start, end);
+
+        for (History history1 : betweenHistory) {
+            System.out.println("history1.getId() = " + history1.getId());
         }
+
     }
 
     public void findNameId(String name, Long accountId) {
+        List<Account> account = accountRepository.findByName(name);
+
     }
 }
