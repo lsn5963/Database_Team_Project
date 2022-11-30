@@ -17,10 +17,10 @@ public class History {
 
 //    @NotNull
 //    @Column(unique = true)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_Id")
-    private Account account;
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "account_Id")
+//    private Account account;
+    private Long accountId;
     @NotNull
     private LocalDateTime dawDate;  //입출금날짜
 

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -14,8 +15,8 @@ public class HistoryController {
     @Autowired
     private HistoryService historyService;
 
-    @RequestMapping("/retrieveDetail")
-    public ResponseEntity retrieveDetail(@RequestBody Long accountId ){
+    @RequestMapping("/retrieveDetail/{accountId}")
+    public ResponseEntity retrieveDetail(@PathVariable Long accountId ){
         historyService.findId(accountId);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }

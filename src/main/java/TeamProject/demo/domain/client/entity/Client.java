@@ -15,6 +15,7 @@ public class Client {
 
     @Id
     @GeneratedValue
+    @Column(name = "client_id")
     private Long id;
 
 
@@ -38,8 +39,8 @@ public class Client {
 
     private String job;
 
-    @OneToMany(mappedBy = "client")
-    private List<Card> cardList;
+//    @OneToMany(mappedBy = "client")
+//    private List<Card> cardList;
 
 //    public Client(String regNumber, String name, String address, LocalDateTime birth, String email, String phoneNumber, String job){
 //
@@ -58,4 +59,6 @@ public class Client {
     public Client(){
 
     }
+
+//
 }

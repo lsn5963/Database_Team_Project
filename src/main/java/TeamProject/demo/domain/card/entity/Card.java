@@ -9,6 +9,7 @@ import lombok.Getter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Getter
@@ -39,12 +40,14 @@ public class Card {
     private String type;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Client client;
+    private String regNumber;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "regNumber")
+//    private Client client;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Account account;
+//    @NotNull
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Account account;
 
     public Card(LocalDateTime applyDate, Long cardLimit, LocalDateTime payDate, String type) {
         this.applyDate = applyDate;
@@ -55,4 +58,8 @@ public class Card {
     public Card(){
 
     }
+//    public static Long getCards(Long id){
+//        client.
+//        return client;
+//    }
 }

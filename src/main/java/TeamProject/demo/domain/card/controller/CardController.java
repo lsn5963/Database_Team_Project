@@ -29,7 +29,8 @@ public class CardController {
     }
     @RequestMapping("/retrieveCardByName/{name}")
     public ResponseEntity retrieveCardByName(@PathVariable String name){
-        System.out.println(name);
+//        System.out.println(name);
+        System.out.println("name = " + name);
         cardService.findName(name);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CardService {
@@ -33,11 +34,23 @@ public class CardService {
     public void findName(String name) {
 //        cardRepository.findAllByName(name);
 
-        Client client = clientRepository.findByName(name);
-        List<Card> cardList = client.getCardList();
-        for (Card card : cardList) {
-            System.out.println(card.getType());
+        Client client1 = clientRepository.findByName(name);
+        String regNumber = client1.getRegNumber();
+        List<Card> find = cardRepository.findByRegNumber(regNumber);
+
+        for (Card card : find) {
+            System.out.println(card.getId());
         }
+
+//        Card.getClients(id);
+//        System.out.println(card1.getPayDate());
+
+
+//        List<Card> cardList = client.getCardList();
+//        System.out.println(cardList);
+//        for (Card card : cardList) {
+//            System.out.println(card.getType());
+//        }
 
 //        System.out.println(client.get주민번호());
 
