@@ -1,6 +1,7 @@
 package TeamProject.demo.domain.account.controller;
 
 import TeamProject.demo.domain.account.dto.AccountCreate;
+import TeamProject.demo.domain.account.entity.Account;
 import TeamProject.demo.domain.account.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 
 
@@ -18,8 +21,8 @@ public class AccountController {
     AccountService accountService;
     @RequestMapping("/retrieveAccountByID/{id}")
     public ResponseEntity retrieveAccountByID(@PathVariable Long id){
-        accountService.findAccountId(id);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        Account accountId = accountService.findAccountId(id);
+        return ResponseEntity.status(HttpStatus.CREATED).body(accountId);
     }
     @RequestMapping("/createAccount")
     public ResponseEntity createAccount(@RequestBody AccountCreate accountCreate){
@@ -28,22 +31,22 @@ public class AccountController {
     }
     @RequestMapping("/retrieveAllAccount")
     public ResponseEntity retrieveAllAccount(){
-        accountService.findAll();
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        List<Account> all = accountService.findAll();
+        return ResponseEntity.status(HttpStatus.CREATED).body(all);
     }
     @RequestMapping("/retrieveAccountByName/{name}")
     public ResponseEntity retrieveAccountByName(@PathVariable String name){
-        accountService.findName(name);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        List<Account> name1 = accountService.findName(name);
+        return ResponseEntity.status(HttpStatus.CREATED).body(name1);
     }
     @RequestMapping("/sortAccountByDate")
     public ResponseEntity sortAccountByDate(){
-        accountService.sortDate();
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        List<Account> accounts = accountService.sortDate();
+        return ResponseEntity.status(HttpStatus.CREATED).body(accounts);
     }
     @RequestMapping("/sortAccountByNameAndDate/{name}")
     public ResponseEntity sortAccountByNameAndDate(@PathVariable String name){
-        accountService.sortNameDate(name);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        List<Account> accounts = accountService.sortNameDate(name);
+        return ResponseEntity.status(HttpStatus.CREATED).body(accounts);
     }
 }

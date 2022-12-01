@@ -1,5 +1,6 @@
 package TeamProject.demo.domain.history.controller;
 
+import TeamProject.demo.domain.history.entity.History;
 import TeamProject.demo.domain.history.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 public class HistoryController {
 
@@ -17,14 +20,14 @@ public class HistoryController {
 
     @RequestMapping("/retrieveDetail/{accountId}")
     public ResponseEntity retrieveDetail(@PathVariable Long accountId ){
-        historyService.findId(accountId);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        List<History> id = historyService.findId(accountId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(id);
     }
 
     @RequestMapping("/retrieveDetailByName")
     public ResponseEntity retrieveDetailByName
             (@PathVariable String name, Long accountId ){
-        historyService.findNameId(name, accountId);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        History nameId = historyService.findNameId(name, accountId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nameId);
     }
 }

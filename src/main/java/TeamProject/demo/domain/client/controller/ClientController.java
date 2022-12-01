@@ -1,6 +1,7 @@
 package TeamProject.demo.domain.client.controller;
 
 import TeamProject.demo.domain.client.dto.ClientCreate;
+import TeamProject.demo.domain.client.entity.Client;
 import TeamProject.demo.domain.client.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Controller
 public class ClientController {
@@ -26,13 +28,14 @@ public class ClientController {
     }
     @RequestMapping("/retrieveAllClient")
     public ResponseEntity retrieveAllClient(){
-        System.out.println(clientService.findAll());
+        List<Client> all = clientService.findAll();
+//        System.out.println(clientService.findAll());
 //        System.out.println("clientRepository = " + clientRepository.findAll());
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        return ResponseEntity.status(HttpStatus.CREATED).body(all);
     }
     @RequestMapping("/retrieveClientByBirth/{birth}")   //날짜를 기준으로 가장 생일이 가까운 고객 한명을 리턴
     public ResponseEntity retrieveClientByBirth(@PathVariable String birth){
-        clientService.birthFind(birth);
-        return ResponseEntity.status(HttpStatus.CREATED).body("zz");
+        Client client = clientService.birthFind(birth);
+        return ResponseEntity.status(HttpStatus.CREATED).body(client);
     }
 }
