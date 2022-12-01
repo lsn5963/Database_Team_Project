@@ -31,7 +31,7 @@ public class CardService {
         return cardRepository.findAll();
     }
 
-    public void findName(String name) {
+    public List<Card> findName(String name) {
 //        cardRepository.findAllByName(name);
 
         Client client1 = clientRepository.findByName(name);
@@ -41,19 +41,6 @@ public class CardService {
         for (Card card : find) {
             System.out.println(card.getId());
         }
-
-//        Card.getClients(id);
-//        System.out.println(card1.getPayDate());
-
-
-//        List<Card> cardList = client.getCardList();
-//        System.out.println(cardList);
-//        for (Card card : cardList) {
-//            System.out.println(card.getType());
-//        }
-
-//        System.out.println(client.get주민번호());
-
-//        c
+        return find;
     }
 }

@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 public interface HistoryRepository extends JpaRepository<History, Long> {
     List<History> findByAccountId(Long accountId);
-
     List<History> findByAccountIdAndDawDateBetween(Long id, LocalDateTime start, LocalDateTime end);
 }

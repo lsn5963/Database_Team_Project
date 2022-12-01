@@ -26,7 +26,7 @@ public class ClientService {
         return clientRepository.findAll();
     }
 
-    public void birthFind(String birth) {
+    public Long birthFind(String birth) {
         LocalDate date = LocalDate.parse(birth, DateTimeFormatter.ISO_DATE);
 
         Client top1ByBirthBefore = clientRepository.findTop1ByBirthBeforeOrderByBirthDesc(date);
@@ -46,8 +46,7 @@ public class ClientService {
         }else{
             result = top1ByBirthBefore.getId();
         }
-
-        System.out.println(result);
+        return result;
 
     }
 }

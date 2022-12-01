@@ -15,8 +15,8 @@ public class CardController {
     @Autowired
     CardService cardService;
 
-    @RequestMapping("/cardCreate")
-    public ResponseEntity  cardCreate(@RequestBody  CardCreate cardCreate){
+    @RequestMapping("/createCard")
+    public ResponseEntity  createCard(@RequestBody  CardCreate cardCreate){
         cardService.save(cardCreate);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }

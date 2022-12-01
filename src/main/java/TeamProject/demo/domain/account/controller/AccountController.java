@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AccountController {
     @Autowired
     AccountService accountService;
-    @RequestMapping("/retrieveAccountByID")
-    public ResponseEntity retrieveAccountByID(@RequestBody Long id){
+    @RequestMapping("/retrieveAccountByID/{id}")
+    public ResponseEntity retrieveAccountByID(@PathVariable Long id){
         accountService.findAccountId(id);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }

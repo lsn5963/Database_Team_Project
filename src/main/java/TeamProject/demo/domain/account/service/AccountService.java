@@ -23,28 +23,33 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
-    public void findName(String name) {
+    public List<Account> findName(String name) {
         List<Account> account = accountRepository.findByName(name);
         for (Account account1 : account) {
             System.out.println(account1.getEmail());
         }
+
+        return account;
     }
 
-    public void sortDate() {
+    public List<Account> sortDate() {
         List<Account> sortAccount = accountRepository.findAllByOrderByOpeningDate();
         for (Account account : sortAccount) {
             System.out.println("account.getName() = " + account.getName());
         }
+        return sortAccount;
     }
 
-    public void sortNameDate(String name) {
+    public List<Account> sortNameDate(String name) {
         List<Account> account = accountRepository.findAllByNameOrderByOpeningDate(name);
         for (Account account1 : account) {
             System.out.println(account1.getOpeningDate());
         }
+        return account;
     }
 
-    public void findAccountId(Long accountId) {
-        accountRepository.findById(accountId);
+    public Account findAccountId(Long accountId) {
+        Account account = accountRepository.findById(accountId).get();
+        return account;
     }
 }

@@ -20,8 +20,7 @@ public class HistoryService {
 
     @Autowired
     AccountRepository accountRepository;
-    public void findId(Long accountId) {
-        List<History> history = historyRepository.findByAccountId(accountId);
+    public List<History> findId(Long accountId) {
 
         LocalDateTime end = LocalDateTime.now();
         LocalDateTime start = end.minusMonths(1);
@@ -30,11 +29,12 @@ public class HistoryService {
         for (History history1 : betweenHistory) {
             System.out.println("history1.getId() = " + history1.getId());
         }
+        return betweenHistory;
 
     }
 
-    public void findNameId(String name, Long accountId) {
-        List<Account> account = accountRepository.findByName(name);
-
+    public History findNameId(String name, Long accountId) {
+        History history = historyRepository.findById(accountId).get();
+        return history;
     }
 }
