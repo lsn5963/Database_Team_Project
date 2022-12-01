@@ -18,8 +18,7 @@ public class HistoryService {
     @Autowired
     HistoryRepository historyRepository;
 
-    @Autowired
-    AccountRepository accountRepository;
+
     public List<History> findId(Long accountId) {
 
         LocalDateTime end = LocalDateTime.now();

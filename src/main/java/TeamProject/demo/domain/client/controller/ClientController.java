@@ -32,7 +32,7 @@ public class ClientController {
     }
     @RequestMapping("/retrieveClientByBirth/{birth}")   //날짜를 기준으로 가장 생일이 가까운 고객 한명을 리턴
     public ResponseEntity retrieveClientByBirth(@PathVariable String birth){
-        clientService.birthFind(birth)
+        clientService.birthFind(birth);
         return ResponseEntity.status(HttpStatus.CREATED).body("zz");
     }
 }
