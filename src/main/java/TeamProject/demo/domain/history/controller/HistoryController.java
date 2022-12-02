@@ -32,6 +32,6 @@ public class HistoryController {
     @RequestMapping("/retrieveAllDetail")
     public ResponseEntity retrieveAllDetail(){
         List<History> findAll = historyService.findAll();
-        return ResponseEntity.status(HttpStatus.CREATED).body(nameId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(findAll);
     }
 }
