@@ -25,9 +25,13 @@ public class HistoryController {
     }
 
     @RequestMapping("/retrieveDetailByName")
-    public ResponseEntity retrieveDetailByName
-            (@PathVariable String name, Long accountId ){
+    public ResponseEntity retrieveDetailByName(@PathVariable String name, Long accountId ){
         History nameId = historyService.findNameId(name, accountId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(nameId);
+    }
+    @RequestMapping("/retrieveAllDetail")
+    public ResponseEntity retrieveAllDetail(){
+        List<History> findAll = historyService.findAll();
         return ResponseEntity.status(HttpStatus.CREATED).body(nameId);
     }
 }
