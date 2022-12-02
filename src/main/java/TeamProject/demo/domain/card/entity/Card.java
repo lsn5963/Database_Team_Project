@@ -41,6 +41,7 @@ public class Card {
 
     @NotNull
     private String regNumber;
+    private Long account_Id;
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "regNumber")
 //    private Client client;

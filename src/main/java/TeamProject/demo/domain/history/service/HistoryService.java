@@ -36,4 +36,9 @@ public class HistoryService {
         History history = historyRepository.findById(accountId).get();
         return history;
     }
+
+
+    public List<History> findAll() {
+        return historyRepository.findAll();
+    }
 }

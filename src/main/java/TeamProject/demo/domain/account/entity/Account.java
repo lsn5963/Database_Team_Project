@@ -43,9 +43,9 @@ public class Account {
 
     private String email;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Client client;
-
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    private Client client;
+    private Long client_id;
     public Account(String type, Boolean apply, LocalDateTime openingDate, String name, String phoneNumber, String email) {
         this.type = type;
         this.apply = apply;
