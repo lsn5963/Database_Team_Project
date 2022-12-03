@@ -23,7 +23,7 @@ public class CardService {
     public void save(CardCreate cardCreate){
         System.out.println(cardCreate.getApplyDate());
         Card card = new Card(cardCreate.getApplyDate(),cardCreate.getCardLimit(),
-                cardCreate.getPayDate(),cardCreate.getType());
+                cardCreate.getPayDate(),cardCreate.getType(), cardCreate.getRegNumber(), cardCreate.getAccount_id());
 
         cardRepository.save(card);
     }

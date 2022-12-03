@@ -15,17 +15,9 @@ public class History {
     @GeneratedValue
     private Long id;
 
-//    @NotNull
-//    @Column(unique = true)
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "account_Id")
-//    private Account account;
     private Long accountId;
     @NotNull
     private LocalDateTime dawDate;  //입출금날짜
-
-    @NotNull
-    private Long transactionNumber;
 
     @NotNull
     private String depositType;

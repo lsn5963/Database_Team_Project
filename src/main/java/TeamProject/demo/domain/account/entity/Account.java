@@ -16,12 +16,7 @@ public class Account {
 
     @Id
     @GeneratedValue
-    @Column(name = "account_Id")
     private Long id;
-
-//    @NotNull
-//    @Column(unique = true)
-//    private String accountId;
 
     @NotNull
     private String type;
@@ -43,16 +38,16 @@ public class Account {
 
     private String email;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    private Client client;
-    private Long client_id;
-    public Account(String type, Boolean apply, LocalDateTime openingDate, String name, String phoneNumber, String email) {
+    private String regNumber;
+    public Account(String type, Long balance, Boolean apply, LocalDateTime openingDate, String name, String phoneNumber, String email, String regNumber) {
         this.type = type;
+        this.balance = balance;
         this.apply = apply;
         this.openingDate = openingDate;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.regNumber = regNumber;
     }
     public  Account(){
 

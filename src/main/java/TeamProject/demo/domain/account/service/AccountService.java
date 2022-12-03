@@ -13,8 +13,8 @@ public class AccountService {
     @Autowired
     AccountRepository accountRepository;
     public void save(AccountCreate accountCreate) {
-        Account account = new Account(accountCreate.getType(),accountCreate.getApply(),accountCreate.getOpeningDate(),
-                accountCreate.getName(),accountCreate.getPhoneNumber(),accountCreate.getEmail());
+        Account account = new Account(accountCreate.getType(), accountCreate.getBalance(),accountCreate.getApply(),accountCreate.getOpeningDate(),
+                accountCreate.getName(),accountCreate.getPhoneNumber(),accountCreate.getEmail(), accountCreate.getRegNumber());
 
         accountRepository.save(account);
     }

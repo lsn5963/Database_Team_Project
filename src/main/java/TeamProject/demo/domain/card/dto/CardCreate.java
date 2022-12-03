@@ -16,4 +16,6 @@ public class CardCreate {
     private String type;
 
     private String regNumber;
+
+    private Long account_id;
 }

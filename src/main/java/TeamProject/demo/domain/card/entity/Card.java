@@ -18,12 +18,7 @@ public class Card {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "card_Id")
     private Long id;
-
-//    @NotNull
-//    @Column(unique = true)
-//    private Long cardId;
 
     @NotNull
 //    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss", timezone = "Asia/Seoul")
@@ -41,26 +36,18 @@ public class Card {
 
     @NotNull
     private String regNumber;
+
     private Long account_Id;
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "regNumber")
-//    private Client client;
 
-//    @NotNull
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    private Account account;
-
-    public Card(LocalDateTime applyDate, Long cardLimit, LocalDateTime payDate, String type) {
+    public Card(LocalDateTime applyDate, Long cardLimit, LocalDateTime payDate, String type, String regNumber, Long account_Id) {
         this.applyDate = applyDate;
         this.cardLimit = cardLimit;
         this.payDate = payDate;
         this.type = type;
+        this.regNumber = regNumber;
+        this.account_Id = account_Id;
     }
     public Card(){
 
     }
-//    public static Long getCards(Long id){
-//        client.
-//        return client;
-//    }
 }

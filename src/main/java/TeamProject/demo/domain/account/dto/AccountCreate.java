@@ -9,6 +9,8 @@ public class AccountCreate {
 
     private String type;
 
+    private Long balance;
+
     private Boolean apply;
 
     private LocalDateTime openingDate;
