@@ -22,7 +22,6 @@ function Client_Birth() {
     const params = useParams();
     const data = useFetch("/retrieveClientByBirth/" + params.birth);
     const arr = new Array(data);
-//    console.log(arr);
     const [birth, setBirth] = useState([]);
 
     const onSubmit = async () => {
@@ -44,14 +43,7 @@ function Client_Birth() {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav">
-                <li className="dropdown">
-                  <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">정보 등록<span className="caret" /></a>
-                  <ul className="dropdown-menu" role="menu">
-                    <li><Link to={"/register_client"}>고객 정보</Link></li>
-                    <li><Link to={"/register_card"}>카드 정보</Link></li>
-                    <li><Link to={"/register_account"}>계좌 정보</Link></li>
-                  </ul>
-                </li>
+                <li><Link to={"/register_client"}>고객 등록</Link></li>
                 <li className="active"><Link to={"/client"}>고객 조회</Link></li>
                 <li><Link to={"/card"}>카드 조회</Link></li>
                 <li><Link to={"/account"}>계좌 조회</Link></li>
