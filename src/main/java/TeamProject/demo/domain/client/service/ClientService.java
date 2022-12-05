@@ -33,6 +33,14 @@ public class ClientService {
 
         Client top1ByBirthAfter = clientRepository.findTop1ByBirthAfter(date);
 
+        if (top1ByBirthBefore == null){
+            return top1ByBirthAfter;
+        }
+
+        if (top1ByBirthAfter == null){
+            return top1ByBirthBefore;
+        }
+
 
         Duration duration1 = Duration.between(date.atStartOfDay(), top1ByBirthBefore.getBirth().atStartOfDay());
 //        Duration duration1 = Duration.between(top1ByBirthBefore.getBirth().atStartOfDay(), date.atStartOfDay());
