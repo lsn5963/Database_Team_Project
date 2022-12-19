@@ -19,5 +19,15 @@
 5. 예금계좌 거래내역은 예금계좌ID, 입출금날짜, 거래번호를 부여하여 식별하며 예금구분, 예금내용,
 거래금액, 예금잔고 정보를 가진다
 
-#기술 스택
+# 기술 스택
 <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
+<img src="https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=Spring&logoColor=white">
+
+# E-R
+<img src="https://user-images.githubusercontent.com/77337977/208402976-91e0d12a-7712-468f-b2b5-712956140f5d.png">
+
+
+# 고칠 점
+1. 연관관계 매핑
+2. ER다이어그램 수정
+3. 코드 깔끔하게 리팩토링
