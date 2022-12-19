@@ -20,4 +20,4 @@
 거래금액, 예금잔고 정보를 가진다
 
 #기술 스택
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
